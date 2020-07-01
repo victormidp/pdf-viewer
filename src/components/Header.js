@@ -14,10 +14,16 @@ import {
 	NavbarText,
 } from "reactstrap";
 
-const Example = (props) => {
+const Example = ({ items }) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const toggle = () => setIsOpen(!isOpen);
+
+	const renderOptions = () => {
+		return items.map((item) => {
+			return <DropdownItem>{item.title}</DropdownItem>;
+		});
+	};
 
 	return (
 		<Navbar color="light" light expand="md" fixed>
@@ -29,17 +35,10 @@ const Example = (props) => {
 						<DropdownToggle nav caret>
 							Options
 						</DropdownToggle>
-						<DropdownMenu right>
-							<DropdownItem>Option 1</DropdownItem>
-							<DropdownItem>Option 2</DropdownItem>
-							<DropdownItem divider />
-							<DropdownItem>Reset</DropdownItem>
-						</DropdownMenu>
+						<DropdownMenu right>{renderOptions()}</DropdownMenu>
 					</UncontrolledDropdown>
 					<NavItem>
-						<NavLink>
-							Download
-						</NavLink>
+						<NavLink>Download</NavLink>
 					</NavItem>
 				</Nav>
 			</Collapse>

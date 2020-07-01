@@ -6,7 +6,7 @@ import imageData from "./data.json";
 
 
 function App() {
-	const [pageNumber, setPageNumber] = useState(1);
+	const [pageIdx, setPageIdx] = useState(0);
 	return (
 		<div className="app">
 			<Header items={imageData} currentIdx={0} />
