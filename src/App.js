@@ -1,17 +1,16 @@
 import React, { useState } from "react";
-import { Document, Page, pdfjs, Outline } from "react-pdf";
-import docfile from "./assets/docs/sampledoc.pdf";
-import { Layout, Menu } from 'antd';
+import { pdfjs } from "react-pdf";
 import Header from "./components/Header";
 import ImageViewer from "./components/ImageViewer";
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+import imageData from "./data.json";
+
 
 function App() {
 	const [pageNumber, setPageNumber] = useState(1);
 	return (
 		<div className="app">
-			<Header />
-			<ImageViewer />
+			<Header items={imageData} currentIdx={0} />
+			<ImageViewer items={imageData} currentIdx={0} />
 		</div>
 	);
 }
