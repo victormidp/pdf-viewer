@@ -9,8 +9,8 @@ function App() {
 	const [pageIdx, setPageIdx] = useState(0);
 	return (
 		<div className="app">
-			<Header items={imageData} currentIdx={0} />
-			<ImageViewer items={imageData} currentIdx={0} />
+			<Header items={imageData} currentIdx={pageIdx} onOptionChange={setPageIdx} />
+			<ImageViewer item={imageData[pageIdx]} />
 		</div>
 	);
 }

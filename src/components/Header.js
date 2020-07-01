@@ -14,14 +14,18 @@ import {
 	NavbarText,
 } from "reactstrap";
 
-const Example = ({ items }) => {
+const Example = ({ items, onOptionChange }) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const toggle = () => setIsOpen(!isOpen);
 
 	const renderOptions = () => {
-		return items.map((item) => {
-			return <DropdownItem>{item.title}</DropdownItem>;
+		return items.map((item, idx) => {
+			return (
+				<DropdownItem onClick={() => onOptionChange(idx)}>
+					{item.title}
+				</DropdownItem>
+			);
 		});
 	};
 
