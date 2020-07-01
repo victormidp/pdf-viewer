@@ -11,7 +11,6 @@ function App() {
 		<Layout>
 			<Header />
 			<Document file={docfile}>
-				<Outline onItemClick={({ pageNumber }) => setPageNumber(pageNumber)} className="outline" />
 				<Page pageNumber={pageNumber} />
 			</Document>
 		</Layout>
