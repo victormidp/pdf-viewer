@@ -6,8 +6,12 @@ function ImageViewer({item}) {
         <div className="imageViewer">
             <TransformWrapper>
                 <TransformComponent>
-                    <img src={item.url} alt="test" className="imageViewer__image" />
-                    {item.title}
+                    <div className="imageViewer__content">
+                        <img src={item.url} alt="test" className="imageViewer__image" />
+                        <div>
+                        {item.title}
+                        </div>
+                    </div>
                 </TransformComponent>
             </TransformWrapper>
         </div>

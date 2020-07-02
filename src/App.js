@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { pdfjs } from "react-pdf";
 import Header from "./components/Header";
 import ImageViewer from "./components/ImageViewer";
 import imageData from "./data.json";
