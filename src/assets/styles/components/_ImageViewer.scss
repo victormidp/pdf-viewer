@@ -1,5 +1,9 @@
 .imageViewer {
     background-color: gray;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .imageViewer__content {
@@ -9,4 +13,9 @@
     height: 90vh;
     justify-content: center;
     width: 100vw;
+}
+
+.controlMenu {
+    bottom: 0;
+    margin-bottom: 1rem;
 }
